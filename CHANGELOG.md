@@ -42,14 +42,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned for Phase 6
-- HelpScout OAuth integration
-- Batch notification processor with WP-Cron
-- Queue management for signup and resolution notifications
-- WP-CLI commands for queue processing
-- Retry logic with exponential backoff
+### Added in Phase 6 - HelpScout Integration
+- OAuth 2.0 client for HelpScout API authentication
+- Automatic access token refresh
+- Queue manager with retry logic and exponential backoff
+- Batch processor with WP-Cron scheduling (every 5 minutes)
+- Notification handler for signup and resolution messages
+- WP-CLI commands for queue management
+- Failed queue with manual retry capability
+- Queue statistics and monitoring
+- Rate limiting and API error handling
+- Filters for customizing notification messages
 
-### Planned for Phase 7
+### Added in Phase 7 - Admin Interface (Partial)
+- Custom admin columns for known issues list:
+  - Jira Issue column with external link
+  - Affected Users column with clickable count
+  - Status column with colored badges
+- AJAX-powered affected users modal
+- Modal shows user details, signup date, and HelpScout status
+- Smooth modal animations and responsive design
+- Empty state and error handling for modal
+- Sortable columns for affected users and status
+
+### Planned Completion for Phase 7
 - Admin interface enhancements
 - Custom admin columns with affected user counts
 - Affected users modal for detailed view

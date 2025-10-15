@@ -43,7 +43,7 @@ Add these constants to your `wp-config.php`:
 define( 'KNOWN_ISSUES_WEBHOOK_SECRET', 'your-hmac-secret-here' );
 define( 'KNOWN_ISSUES_WEBHOOK_URL_SECRET', 'your-url-secret-here' );
 
-// HelpScout API (Phase 6 - Coming Soon)
+// HelpScout API
 define( 'KNOWN_ISSUES_HELPSCOUT_APP_ID', 'your-app-id' );
 define( 'KNOWN_ISSUES_HELPSCOUT_APP_SECRET', 'your-app-secret' );
 define( 'KNOWN_ISSUES_HELPSCOUT_MAILBOX_ID', 'your-mailbox-id' );
@@ -98,6 +98,35 @@ The block displays differently based on user state:
 - **Logged out**: Shows login message
 - **Logged in (not affected)**: Shows signup button
 - **Logged in (affected)**: Shows subscription status and unsubscribe button
+
+## WP-CLI Commands
+
+The plugin includes WP-CLI commands for managing HelpScout notification queues:
+
+```bash
+# Process notification queues
+wp known-issues process-queue
+
+# Process with custom batch size
+wp known-issues process-queue --batch-size=20
+
+# Process specific queue only
+wp known-issues process-queue --queue-type=signup
+wp known-issues process-queue --queue-type=resolved
+
+# Dry run to see what would be processed
+wp known-issues process-queue --dry-run
+
+# View queue statistics
+wp known-issues queue-stats
+
+# Retry failed notifications
+wp known-issues retry-failed --all
+wp known-issues retry-failed 0
+
+# Clear all queues (with confirmation)
+wp known-issues clear-queues --yes
+```
 
 ## Development
 
@@ -156,10 +185,11 @@ known-issues/
 - [x] Phase 3: Jira webhook integration
 - [x] Phase 4: Custom block development
 - [x] Phase 5: REST API for affected users
-- [ ] Phase 6: HelpScout integration
-- [ ] Phase 7: Admin interface enhancements
+- [x] Phase 6: HelpScout integration
+- [x] Phase 7: Admin interface enhancements (partial - columns & modal)
+- [ ] Phase 7: Dashboard widget & settings page
 - [ ] Phase 8: Privacy & GDPR compliance
-- [ ] Phase 9: Testing & documentation
+- [ ] Phase 9: Comprehensive testing
 - [ ] Phase 10: GitHub Actions & CI/CD
 
 ## Support
