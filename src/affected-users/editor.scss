@@ -1,0 +1,14 @@
+/**
+ * Editor styles for Affected Users block.
+ */
+
+.known-issues-affected-users {
+	&__help {
+		margin: 0;
+		padding: 0.75rem;
+		background: #e7f3ff;
+		border-left: 4px solid #007bff;
+		font-size: 0.875rem;
+		color: #004085;
+	}
+}

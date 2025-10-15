@@ -1,0 +1,74 @@
+/**
+ * Frontend styles for Affected Users block.
+ */
+
+.known-issues-affected-users {
+	padding: 1.5rem;
+	background: #f8f9fa;
+	border: 1px solid #dee2e6;
+	border-radius: 4px;
+	margin: 1rem 0;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	&__count {
+		margin: 0;
+		font-weight: 600;
+		color: #495057;
+	}
+
+	&__button,
+	&__unsubscribe-button {
+		padding: 0.75rem 1.5rem;
+		background: #007bff;
+		color: #fff;
+		border: none;
+		border-radius: 4px;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background-color 0.2s;
+		align-self: flex-start;
+
+		&:hover {
+			background: #0056b3;
+		}
+
+		&:focus {
+			outline: 2px solid #0056b3;
+			outline-offset: 2px;
+		}
+
+		&:disabled {
+			background: #6c757d;
+			cursor: not-allowed;
+		}
+	}
+
+	&__unsubscribe-button {
+		background: #dc3545;
+
+		&:hover {
+			background: #c82333;
+		}
+
+		&:focus {
+			outline-color: #c82333;
+		}
+	}
+
+	&__login-message,
+	&__message {
+		margin: 0;
+		color: #495057;
+	}
+
+	&__subscribed {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+}

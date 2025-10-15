@@ -42,6 +42,13 @@ class Plugin {
 	public $meta_fields;
 
 	/**
+	 * Blocks handler.
+	 *
+	 * @var Blocks
+	 */
+	public $blocks;
+
+	/**
 	 * Get plugin instance.
 	 *
 	 * @return Plugin
@@ -81,6 +88,7 @@ class Plugin {
 		$this->post_type   = new PostType();
 		$this->post_status = new PostStatus();
 		$this->meta_fields = new MetaFields();
+		$this->blocks      = new Blocks();
 	}
 
 	/**
