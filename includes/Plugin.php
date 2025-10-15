@@ -56,6 +56,13 @@ class Plugin {
 	public $rest_api;
 
 	/**
+	 * Admin Columns handler.
+	 *
+	 * @var AdminColumns
+	 */
+	public $admin_columns;
+
+	/**
 	 * Get plugin instance.
 	 *
 	 * @return Plugin
@@ -97,6 +104,11 @@ class Plugin {
 		$this->meta_fields = new MetaFields();
 		$this->blocks      = new Blocks();
 		$this->rest_api    = new RestApi\RestInit();
+
+		// Admin-only components.
+		if ( is_admin() ) {
+			$this->admin_columns = new AdminColumns();
+		}
 
 		// Initialize HelpScout batch processor.
 		HelpScout\BatchProcessor::init();

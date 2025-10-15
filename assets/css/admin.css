@@ -1,0 +1,185 @@
+/**
+ * Admin styles for Known Issues plugin.
+ */
+
+/* Affected count button */
+.ki-affected-count {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	color: #2271b1;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.ki-affected-count:hover {
+	color: #135e96;
+}
+
+.ki-affected-count .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* Modal styles */
+.ki-modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 100000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.ki-modal {
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	max-width: 800px;
+	width: 90%;
+	max-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.ki-modal-header {
+	padding: 20px 24px;
+	border-bottom: 1px solid #dcdcde;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.ki-modal-title {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.ki-modal-close {
+	background: none;
+	border: none;
+	font-size: 24px;
+	line-height: 1;
+	cursor: pointer;
+	color: #50575e;
+	padding: 0;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+}
+
+.ki-modal-close:hover {
+	background: #f0f0f1;
+	color: #1d2327;
+}
+
+.ki-modal-body {
+	padding: 24px;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.ki-modal-loading {
+	text-align: center;
+	padding: 40px;
+	color: #50575e;
+}
+
+.ki-modal-loading .spinner {
+	display: inline-block;
+	margin: 0;
+	float: none;
+	visibility: visible;
+}
+
+.ki-affected-users-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.ki-affected-users-table th {
+	text-align: left;
+	padding: 12px;
+	background: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+	font-weight: 600;
+	font-size: 13px;
+	color: #50575e;
+}
+
+.ki-affected-users-table td {
+	padding: 12px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.ki-affected-users-table tr:hover {
+	background: #f6f7f7;
+}
+
+.ki-status-badge {
+	display: inline-block;
+	padding: 3px 8px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 600;
+	color: #fff;
+}
+
+.ki-status-badge--pending {
+	background: #f0b849;
+}
+
+.ki-status-badge--notified {
+	background: #2271b1;
+}
+
+.ki-status-badge--resolved {
+	background: #00a32a;
+}
+
+/* Empty state */
+.ki-empty-state {
+	text-align: center;
+	padding: 40px;
+	color: #50575e;
+}
+
+.ki-empty-state .dashicons {
+	font-size: 48px;
+	width: 48px;
+	height: 48px;
+	color: #c3c4c7;
+	margin-bottom: 16px;
+}
