@@ -49,6 +49,13 @@ class Plugin {
 	public $blocks;
 
 	/**
+	 * REST API handler.
+	 *
+	 * @var RestApi\RestInit
+	 */
+	public $rest_api;
+
+	/**
 	 * Get plugin instance.
 	 *
 	 * @return Plugin
@@ -89,6 +96,7 @@ class Plugin {
 		$this->post_status = new PostStatus();
 		$this->meta_fields = new MetaFields();
 		$this->blocks      = new Blocks();
+		$this->rest_api    = new RestApi\RestInit();
 	}
 
 	/**
