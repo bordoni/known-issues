@@ -28,6 +28,13 @@ class RestInit {
 	private $affected_users_controller;
 
 	/**
+	 * Jira Webhook handler.
+	 *
+	 * @var \KnownIssues\Jira\WebhookHandler
+	 */
+	private $webhook_handler;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -42,5 +49,8 @@ class RestInit {
 	public function register_routes() {
 		$this->affected_users_controller = new AffectedUsersController();
 		$this->affected_users_controller->register_routes();
+
+		$this->webhook_handler = new \KnownIssues\Jira\WebhookHandler();
+		$this->webhook_handler->register_routes();
 	}
 }
