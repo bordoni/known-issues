@@ -69,6 +69,9 @@ register_activation_hook( __FILE__, __NAMESPACE__ . '\\activate' );
 function deactivate() {
 	// Flush rewrite rules on deactivation.
 	flush_rewrite_rules();
+
+	// Unregister cron events.
+	HelpScout\BatchProcessor::unregister();
 }
 
 register_deactivation_hook( __FILE__, __NAMESPACE__ . '\\deactivate' );

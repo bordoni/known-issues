@@ -97,6 +97,14 @@ class Plugin {
 		$this->meta_fields = new MetaFields();
 		$this->blocks      = new Blocks();
 		$this->rest_api    = new RestApi\RestInit();
+
+		// Initialize HelpScout batch processor.
+		HelpScout\BatchProcessor::init();
+
+		// Register WP-CLI commands.
+		if ( defined( 'WP_CLI' ) && WP_CLI ) {
+			\WP_CLI::add_command( 'known-issues', new Cli\Commands() );
+		}
 	}
 
 	/**
