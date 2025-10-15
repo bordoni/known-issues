@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/wp-env.json",
+    "core": null,
+    "plugins": ["./"],
+    "env": {
+        "development": {
+            "config": {
+                "WP_DEVELOPMENT_MODE": "plugin",
+                "KNOWN_ISSUES_WEBHOOK_SECRET": "test-secret",
+                "KNOWN_ISSUES_WEBHOOK_URL_SECRET": "url-secret",
+                "KNOWN_ISSUES_DEBUG": true
+            }
+        },
+        "tests": {
+            "config": {
+                "FS_METHOD": "direct",
+                "KNOWN_ISSUES_WEBHOOK_SECRET": "test-secret",
+                "KNOWN_ISSUES_WEBHOOK_URL_SECRET": "url-secret"
+            },
+            "mappings": {
+                "/wp-content/plugins/known-issues": "."
+            }
+        }
+    }
+}
