@@ -2,9 +2,6 @@
 /node_modules/
 /vendor/
 
-# Build files
-/build/
-
 # Pup build directories
 .pup-build/
 .pup-zip/

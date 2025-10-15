@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "known-issues/affected-users",
+  "version": "1.0.0",
+  "title": "Affected Users",
+  "category": "widgets",
+  "icon": "groups",
+  "description": "Display affected user count and allow users to subscribe to updates.",
+  "keywords": [
+    "known issues",
+    "affected",
+    "subscribe",
+    "users"
+  ],
+  "textdomain": "known-issues",
+  "supports": {
+    "align": true,
+    "className": true,
+    "html": false
+  },
+  "attributes": {
+    "showAffectedCount": {
+      "type": "boolean",
+      "default": false
+    },
+    "allowSignup": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "I'm affected by this issue"
+    },
+    "unsubscribeButtonText": {
+      "type": "string",
+      "default": "Unsubscribe"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
